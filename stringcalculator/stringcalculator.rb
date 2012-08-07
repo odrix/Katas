@@ -1,7 +1,7 @@
 
 class Calculator
 	
-	def calculate
-	       return 0
+	def calculate(s)
+	       return Integer(s)
 	end	       
 end
