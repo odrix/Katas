@@ -58,4 +58,10 @@ class Tester < Test::Unit::TestCase
 		}
 		assert_equal('Negatives not allowed: -2;-4', exception.message)
 	end
+
+	def test_NumberMoreThan1000Ignored
+		calc = Calculator.new
+		result = calc.add('1001,2')
+		assert_equal(2, result)
+	end
 end
