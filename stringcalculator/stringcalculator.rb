@@ -26,7 +26,7 @@ class Calculator
 	end	       
 
 	def parse_int(num)
-		if num.length == 0
+		if num.length == 0 || (num.length == 4 && num != "1000")
 			return 0
 		end
 		if num.start_with?('-')
