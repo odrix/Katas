@@ -26,4 +26,16 @@ class Tester < Test::Unit::TestCase
 		result = calc.add('3,2')
 		assert_equal(5, result)
 	end
+
+	def test_ThreeCharReturnSix
+		calc = Calculator.new
+		result = calc.add('1,3,2')
+		assert_equal(6, result)
+	end
+	
+	def test_ThreeCharWithDifferentDelimiterReturnSix
+		calc = Calculator.new
+		result = calc.add('1\n3,2')
+		assert_equal(6, result)
+	end
 end
