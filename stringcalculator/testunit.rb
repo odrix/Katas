@@ -21,8 +21,8 @@ class Tester < Test::Unit::TestCase
 		assert_equal(3, result)
 	end
 
-	def testTwoCharReturnFive
-		calc = Claculator.new
+	def test_TwoCharReturnFive
+		calc = Calculator.new
 		result = calc.add('3,2')
 		assert_equal(5, result)
 	end
