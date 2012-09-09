@@ -45,6 +45,12 @@ class Tester < Test::Unit::TestCase
 		assert_equal(3, result)
 	end
 
+	def test_NewDemiliterMoreThanOneChar
+		calc = Calculator.new
+		result = calc.add('\\\\;#*\n1;#*2;#*3')
+		assert_equal(6, result)
+	end
+
 	def test_WithTwoNegative
 		exception = assert_raise(RuntimeError) {
 			calc = Calculator.new
