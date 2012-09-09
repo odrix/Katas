@@ -1,21 +1,37 @@
 
 class Calculator
+	@is_error_on_negative = false
+	@negative_list_found = []
 	
 	def add(s)
-		sumTotal = 0
-		unless s.index(',').nil? && s.index('\n').nil?
-			s.split(/[,|\\n]/).each do |num|
-				sumTotal+=parseInt(num)
+		@is_error_on_negative = false
+		@negative_list_found = []
+		delimiter = ','
+		if s.start_with?('\\\\')
+			delimiter = s[2..s.index('\n')-1]
+			s = s[s.index('\n')+2..-1]
+		end
+		sum_total = 0
+		unless s.index(delimiter).nil? && s.index('\n').nil?
+			s.split(/[#{delimiter}|\\n]/).each do |num|
+				sum_total += parse_int(num)
 			end
 		else
-			sumTotal = parseInt(s)
+			sum_total = parse_int(s)
 		end
-		return sumTotal 
+		if @is_error_on_negative
+			raise 'Negatives not allowed: ' + @negative_list_found.join(delimiter)
+		end
+		return sum_total 
 	end	       
 
-	def parseInt(num)
+	def parse_int(num)
 		if num.length == 0
 			return 0
+		end
+		if num.start_with?('-')
+			@is_error_on_negative = true
+			@negative_list_found.push(num)
 		end
 		return num.to_i
 	end
