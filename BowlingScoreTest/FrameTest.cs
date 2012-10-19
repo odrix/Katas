@@ -36,5 +36,44 @@ namespace BowlingScoreTest
 
             Assert.AreEqual(true, frame.IsSpare);
         }
+
+        [Test]
+        public void FrameOneRollKnockDown4PinsScore0()
+        {
+            Frame frame = new Frame();
+            frame.Roll(4);
+
+            Assert.AreEqual(0, frame.Score);
+        }
+
+        [Test]
+        public void FrameOneRollKnockDown4Plus3PinsScore7()
+        {
+            Frame frame = new Frame();
+            frame.Roll(4);
+            frame.Roll(3);
+
+            Assert.AreEqual(7, frame.Score);
+        }
+
+        [Test]
+        public void FrameOneRollKnockDown4Plus6PinsScore0()
+        {
+            Frame frame = new Frame();
+            frame.Roll(4);
+            frame.Roll(6);
+
+            Assert.AreEqual(0, frame.Score);
+        }
+
+        [Test]
+        public void FrameOneRollKnockDown0Plus10PinsSCore0()
+        {
+            Frame frame = new Frame();
+            frame.Roll(0);
+            frame.Roll(10);
+
+            Assert.AreEqual(0, frame.Score);
+        }
     }
 }

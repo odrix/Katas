@@ -11,20 +11,20 @@ namespace BowlingScore
         private int _nbRolls;
 
         private Frame currentFrame;
+        private List<Frame> listFrame = new List<Frame>();
 
 
         public void Roll(int nbPins)
         {
             if (currentFrame == null)
                 currentFrame = new Frame();
-
-            _scoreTemporaire += nbPins;
+                        
             currentFrame.Roll(nbPins);
             _nbRolls++;
             if (_nbRolls % 2 == 0)
             {
-                if(!currentFrame.IsSpare) // is Spare
-                    _score = _scoreTemporaire;
+                _score += currentFrame.Score;
+                listFrame.Add(currentFrame);
                 currentFrame = null;
             }
         }
