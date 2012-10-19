@@ -37,5 +37,17 @@ namespace BowlingScoreTest
 
             Assert.AreEqual(7, game.Score);
         }
+
+        [Test]
+        public void Game4RollKnockdown4Plus3Plus8PlusSparePinsScore7()
+        {
+            Game game = new Game();
+            game.Roll(4);
+            game.Roll(3);
+            game.Roll(8);
+            game.Roll(2);
+
+            Assert.AreEqual(7, game.Score);
+        }
     }
 }
