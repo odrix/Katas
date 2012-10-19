@@ -114,5 +114,44 @@ namespace BowlingScoreTest
 
             Assert.AreEqual(true, frame.IsFinish);
         }
+
+
+        [Test]
+        public void FrameOneRollKnockDown4PinsIsStrikeNok()
+        {
+            Frame frame = new Frame();
+            frame.Roll(4);
+
+            Assert.AreEqual(false, frame.IsStrike);
+        }
+
+        [Test]
+        public void Frame2RollsKnockDown4Plus3PinsIsStrikeNok()
+        {
+            Frame frame = new Frame();
+            frame.Roll(4);
+            frame.Roll(3);
+
+            Assert.AreEqual(false, frame.IsStrike);
+        }
+
+        [Test]
+        public void Frame2RollsKnockDown4Plus6PinsIsStrikeNok()
+        {
+            Frame frame = new Frame();
+            frame.Roll(4);
+            frame.Roll(6);
+
+            Assert.AreEqual(false, frame.IsStrike);
+        }
+
+        [Test]
+        public void Frame2RollsKnockDown10PinsIsStrikeOk()
+        {
+            Frame frame = new Frame();
+            frame.Roll(10);
+
+            Assert.AreEqual(true, frame.IsStrike);
+        }
     }
 }

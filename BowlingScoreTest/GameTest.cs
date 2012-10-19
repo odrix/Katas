@@ -39,7 +39,7 @@ namespace BowlingScoreTest
         }
 
         [Test]
-        public void Game4RollKnockdown4Plus3Plus8PlusSparePinsScore7()
+        public void Game4RollKnockdown4Plus3Plus8PinsPlusSpareScore7()
         {
             Game game = new Game();
             game.Roll(4);
@@ -75,6 +75,42 @@ namespace BowlingScoreTest
             game.Roll(2);
 
             Assert.AreEqual(29, game.Score);
+        }
+
+        [Test]
+        public void Game3RollKnockdown4Plus3PlusStrikeScore7()
+        {
+            Game game = new Game();
+            game.Roll(4);
+            game.Roll(3);
+            game.Roll(10); //strike
+
+            Assert.AreEqual(7, game.Score);
+        }
+
+        [Test]
+        public void Game4RollKnockdown4Plus3PlusStrikePlus4PinsScore7()
+        {
+            Game game = new Game();
+            game.Roll(4);
+            game.Roll(3);
+            game.Roll(10); //strike
+            game.Roll(4);
+
+            Assert.AreEqual(7, game.Score);
+        }
+
+        [Test]
+        public void Game4RollKnockdown4Plus3PlusStrikePlus4Plus3PinsScore31()
+        {
+            Game game = new Game();
+            game.Roll(4);
+            game.Roll(3);
+            game.Roll(10); //strike
+            game.Roll(4);
+            game.Roll(3);
+
+            Assert.AreEqual(31, game.Score);
         }
     }
 }
