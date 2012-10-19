@@ -10,22 +10,22 @@ namespace BowlingScore
         private int _scoreTemporaire = 0;
         private int _nbRolls;
 
-        private int nbPinRoll1;
-        private int nbPinRoll2;
+        private Frame currentFrame;
+
 
         public void Roll(int nbPins)
         {
+            if (currentFrame == null)
+                currentFrame = new Frame();
+
             _scoreTemporaire += nbPins;
+            currentFrame.Roll(nbPins);
             _nbRolls++;
             if (_nbRolls % 2 == 0)
             {
-                nbPinRoll2 = nbPins;
-                if(nbPinRoll1 + nbPinRoll2 != 10) // is Spare
+                if(!currentFrame.IsSpare) // is Spare
                     _score = _scoreTemporaire;
-            }
-            else
-            {
-                nbPinRoll1 = nbPins;
+                currentFrame = null;
             }
         }
 
