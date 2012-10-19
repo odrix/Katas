@@ -47,7 +47,7 @@ namespace BowlingScore
             get {return nbPinRoll1 + nbPinRoll2 == 10; }
         }
 
-        private bool IsFinish
+        public bool IsFinish
         {
             get { return nbPinRoll1 != 0 && nbPinRoll2 != 0; }
         }

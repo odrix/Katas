@@ -18,7 +18,7 @@ namespace BowlingScoreTest
         }
 
         [Test]
-        public void FrameOneRollKnockDown4Plus6PinsSpareOK()
+        public void Frame2RollsKnockDown4Plus6PinsSpareOK()
         {
             Frame frame = new Frame();
             frame.Roll(4);
@@ -28,7 +28,7 @@ namespace BowlingScoreTest
         }
 
         [Test]
-        public void FrameOneRollKnockDown0Plus10PinsSpareOK()
+        public void Frame2RollsKnockDown0Plus10PinsSpareOK()
         {
             Frame frame = new Frame();
             frame.Roll(0);
@@ -47,7 +47,7 @@ namespace BowlingScoreTest
         }
 
         [Test]
-        public void FrameOneRollKnockDown4Plus3PinsScore7()
+        public void Frame2RollsKnockDown4Plus3PinsScore7()
         {
             Frame frame = new Frame();
             frame.Roll(4);
@@ -57,7 +57,7 @@ namespace BowlingScoreTest
         }
 
         [Test]
-        public void FrameOneRollKnockDown4Plus6PinsScore0()
+        public void Frame2RollsKnockDown4Plus6PinsScore0()
         {
             Frame frame = new Frame();
             frame.Roll(4);
@@ -67,13 +67,52 @@ namespace BowlingScoreTest
         }
 
         [Test]
-        public void FrameOneRollKnockDown0Plus10PinsSCore0()
+        public void Frame2RollsKnockDown0Plus10PinsSCore0()
         {
             Frame frame = new Frame();
             frame.Roll(0);
             frame.Roll(10);
 
             Assert.AreEqual(0, frame.Score);
+        }
+
+        [Test]
+        public void FrameOneRollKnockDown4PinsFinishNok()
+        {
+            Frame frame = new Frame();
+            frame.Roll(4);
+
+            Assert.AreEqual(false, frame.IsFinish);
+        }
+
+        [Test]
+        public void Frame2RollsKnockDown4Plus3PinsFinishOK()
+        {
+            Frame frame = new Frame();
+            frame.Roll(4);
+            frame.Roll(3);
+
+            Assert.AreEqual(true, frame.IsFinish);
+        }
+
+        [Test]
+        public void Frame2RollsKnockDown4Plus6PinsFinishOk()
+        {
+            Frame frame = new Frame();
+            frame.Roll(4);
+            frame.Roll(6);
+
+            Assert.AreEqual(true, frame.IsFinish);
+        }
+
+        [Test]
+        public void Frame2RollsKnockDown0Plus10PinsFinishOk()
+        {
+            Frame frame = new Frame();
+            frame.Roll(0);
+            frame.Roll(10);
+
+            Assert.AreEqual(true, frame.IsFinish);
         }
     }
 }
