@@ -12,6 +12,8 @@ namespace BowlingScore
         private int? _Bonus1;
         private int? _Bonus2;
 
+        private const int MAX_PIN_KNOCKDOWN = 10;
+
         public void Roll(int nbPins)
         {
             if (!nbPinRoll1.HasValue)
@@ -37,10 +39,10 @@ namespace BowlingScore
                     if (!IsSpare)
                         return nbPinRoll1.Value + nbPinRoll2.Value;
                     if (IsSpare && _Bonus1.HasValue)
-                        return nbPinRoll1.Value + nbPinRoll2.Value + _Bonus1.Value;
+                        return MAX_PIN_KNOCKDOWN + _Bonus1.Value;
                 }
                 else if (IsStrike && _Bonus1.HasValue && _Bonus2.HasValue)
-                    return nbPinRoll1.Value + _Bonus1.Value + _Bonus2.Value;
+                    return MAX_PIN_KNOCKDOWN + _Bonus1.Value + _Bonus2.Value;
 
                 return 0;
             }
@@ -48,12 +50,12 @@ namespace BowlingScore
 
         public bool IsSpare
         {
-            get { return HaveTwoRolls && (nbPinRoll1.Value + nbPinRoll2.Value == 10); }
+            get { return HaveTwoRolls && (nbPinRoll1.Value + nbPinRoll2.Value == MAX_PIN_KNOCKDOWN); }
         }
 
         public bool IsStrike
         {
-            get { return nbPinRoll1.HasValue && nbPinRoll1.Value == 10; }
+            get { return nbPinRoll1.HasValue && nbPinRoll1.Value == MAX_PIN_KNOCKDOWN; }
         }
 
         public bool IsFinish
@@ -61,12 +63,9 @@ namespace BowlingScore
             get { return HaveTwoRolls || IsStrike; }
         }
 
-        public bool HaveTwoRolls
+        private bool HaveTwoRolls
         {
             get { return nbPinRoll1.HasValue && nbPinRoll2.HasValue; }
         } 
-
-        public int? KnockDownPinFirstRoll { get {return nbPinRoll1; }}
-        public int? KnockDownPinSecondRoll { get {return nbPinRoll2; }}
     }
 }
