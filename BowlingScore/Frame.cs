@@ -49,5 +49,8 @@ namespace BowlingScore
         {
             get { return nbPinRoll1.HasValue && nbPinRoll2.HasValue; }
         }
+
+        public int? KnockDownPinFirstRoll { get {return nbPinRoll1; }}
+        public int? KnockDownPinSecondRoll { get {return nbPinRoll2; }}
     }
 }

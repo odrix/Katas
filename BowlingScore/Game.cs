@@ -19,11 +19,10 @@ namespace BowlingScore
                         
             currentFrame.Roll(nbPins);
 
-            if (listFrame.Count > 0 && listFrame[listFrame.Count - 1].IsSpare)
-                listFrame[listFrame.Count - 1].AddBonus(nbPins);
+            if (listFrame.Count > 0 && listFrame[listFrame.Count - 1].IsSpare && currentFrame.KnockDownPinFirstRoll.HasValue && !currentFrame.KnockDownPinSecondRoll.HasValue )
+                listFrame[listFrame.Count - 1].AddBonus(currentFrame.KnockDownPinFirstRoll.Value);
 
-            _nbRolls++;
-            if (_nbRolls % 2 == 0)
+            if (currentFrame.IsFinish)
             {
                 listFrame.Add(currentFrame);
                 currentFrame = null;
