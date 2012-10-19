@@ -6,34 +6,32 @@ namespace BowlingScore
 {
     public class Frame
     {
-        private int nbPinRoll1 = 0;
-        private int nbPinRoll2 = 0;
+        private int? nbPinRoll1;
+        private int? nbPinRoll2;
 
         private int _Bonus;
 
         public void Roll(int nbPins)
         {
-            if (nbPinRoll1 == 0)
+            if (!nbPinRoll1.HasValue)
                 nbPinRoll1 = nbPins;
             else
-            {
                 nbPinRoll2 = nbPins;
-            }
         }
 
         public int Score
         {
-            get 
+            get
             {
                 if (IsFinish)
                 {
                     if (!IsSpare)
-                        return nbPinRoll1 + nbPinRoll2;
-                    if(IsSpare && _Bonus != 0)
-                            return nbPinRoll1 + nbPinRoll2 + _Bonus;
+                        return nbPinRoll1.Value + nbPinRoll2.Value;
+                    if (IsSpare && _Bonus != 0)
+                        return nbPinRoll1.Value + nbPinRoll2.Value + _Bonus;
                 }
-                
-                return 0; 
+
+                return 0;
             }
         }
 
@@ -44,12 +42,12 @@ namespace BowlingScore
 
         public bool IsSpare
         {
-            get {return nbPinRoll1 + nbPinRoll2 == 10; }
+            get { return IsFinish && nbPinRoll1.Value + nbPinRoll2.Value == 10; }
         }
 
         public bool IsFinish
         {
-            get { return nbPinRoll1 != 0 && nbPinRoll2 != 0; }
+            get { return nbPinRoll1.HasValue && nbPinRoll2.HasValue; }
         }
     }
 }
