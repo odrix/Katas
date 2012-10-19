@@ -16,5 +16,15 @@ namespace BowlingScoreTest
 
             Assert.AreEqual(0, game.Score);
         }
+
+        [Test]
+        public void Game2RollKnockdown7Pins()
+        {
+            Game game = new Game();
+            game.Roll(4);
+            game.Roll(3);
+
+            Assert.AreEqual(7, game.Score);
+        }
     }
 }
