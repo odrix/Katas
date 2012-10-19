@@ -112,5 +112,51 @@ namespace BowlingScoreTest
 
             Assert.AreEqual(31, game.Score);
         }
+
+        [Test]
+        public void Game2StrikeScore0()
+        {
+            Game game = new Game();
+            game.Roll(10); //strike
+            game.Roll(10); //strike
+            
+            Assert.AreEqual(0, game.Score);
+        }
+
+        [Test]
+        public void Game3StrikesScore30()
+        {
+            Game game = new Game();
+            game.Roll(10); //strike
+            game.Roll(10); //strike
+            game.Roll(10); //strike
+
+            Assert.AreEqual(30, game.Score);
+        }
+
+        [Test]
+        public void Game3StrikesPlus5PinsScore55()
+        {
+            Game game = new Game();
+            game.Roll(10); //strike
+            game.Roll(10); //strike
+            game.Roll(10); //strike
+            game.Roll(5);
+
+            Assert.AreEqual(55, game.Score);
+        }
+
+        [Test]
+        public void Game3StrikesPlus5Plus3PinsScore73()
+        {
+            Game game = new Game();
+            game.Roll(10); //strike  ==> 30
+            game.Roll(10); //strike  ==> 25
+            game.Roll(10); //strike  ==> 18
+            game.Roll(5);
+            game.Roll(3);  // 8
+
+            Assert.AreEqual(81, game.Score);
+        }
     }
 }
