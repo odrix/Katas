@@ -26,7 +26,7 @@ namespace BowlingScore
         {
             if (!_Bonus1.HasValue)
                 _Bonus1 = bonus;
-            else
+            else if (!_Bonus2.HasValue)
                 _Bonus2 = bonus;
         }
 

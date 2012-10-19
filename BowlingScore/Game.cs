@@ -22,6 +22,9 @@ namespace BowlingScore
             if (listFrame.Count > 0 && (listFrame[listFrame.Count - 1].IsSpare || listFrame[listFrame.Count - 1].IsStrike))
                 listFrame[listFrame.Count - 1].AddBonus(nbPins);
 
+            if (listFrame.Count > 1 && listFrame[listFrame.Count - 2].IsStrike)
+                listFrame[listFrame.Count - 2].AddBonus(nbPins);
+
             if (currentFrame.IsFinish)
             {
                 listFrame.Add(currentFrame);
