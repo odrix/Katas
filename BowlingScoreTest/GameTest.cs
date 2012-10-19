@@ -158,5 +158,17 @@ namespace BowlingScoreTest
 
             Assert.AreEqual(81, game.Score);
         }
+
+        [Test]
+        public void GodPlayScore300()
+        {
+            Game game = new Game();
+            for (int i = 0; i < 12; i++)
+            {
+                game.Roll(10); 
+            }
+
+            Assert.AreEqual(300, game.Score);
+        }
     }
 }
