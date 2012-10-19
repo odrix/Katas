@@ -10,6 +10,7 @@ namespace BowlingScore
 
         public void Roll(int nbPins)
         {
+            _score = 0;
         }
 
         public int Score { get { return _score; } }
