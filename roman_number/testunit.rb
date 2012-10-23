@@ -39,10 +39,10 @@ class Tester < Test::Unit::TestCase
 		assert_equal(10, result)
 	end
 
-	def test_XIreturn11
+	def test_IXXreturn19
 		rn = Roman_number.new()
-		result = rn.parse('XI')
-		assert_equal(11, result)
+		result = rn.parse('XIX')
+		assert_equal(19, result)
 	end
 
 end
