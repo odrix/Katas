@@ -9,5 +9,11 @@ class Tester < Test::Unit::TestCase
 		assert_equal(1, result)
 	end
 
+	def test_IIreturn2
+		rn = Roman_number.new()
+		result = rn.parse('II')
+		assert_equal(2, result)
+	end
+
 
 end
