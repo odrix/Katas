@@ -75,10 +75,10 @@ class Tester < Test::Unit::TestCase
 		assert_equal(2751, result)
 	end
 
-	def test_MCMXCreturn1999
+	def test_MCMXCreturn1990
 		rn = Roman_number.new()
 		result = rn.parse('MCMXC')
-		assert_equal(1999, result)
+		assert_equal(1990, result)
 	end
 
 end
