@@ -3,7 +3,7 @@ class Roman_number
 	@letters_values =  {}
 
 	def initialize()
-		@letters_values =  {'I' => 1, 'V' => 5, 'X' => 10, 'L' => 50}
+		@letters_values =  { 'I' => 1, 'V' => 5, 'X' => 10, 'L' => 50, 'C' => 100 }
 		@letters_values.default = 0
 	end
 
@@ -22,10 +22,7 @@ class Roman_number
 	private
 
 	def parseOneLetter(letter)
-		#if(@letters_values.has_key?(letter))
-			return @letters_values[letter]
-		#end
-		#return 0
+		return @letters_values[letter]
 	end
 end
 

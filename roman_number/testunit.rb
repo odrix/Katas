@@ -57,4 +57,16 @@ class Tester < Test::Unit::TestCase
 		assert_equal(49, result)
 	end
 
+	def test_Creturn100
+		rn = Roman_number.new()
+		result = rn.parse('C')
+		assert_equal(100, result)
+	end
+
+	def test_XCIXreturn99
+		rn = Roman_number.new()
+		result = rn.parse('XCIX')
+		assert_equal(99, result)
+	end
+
 end
