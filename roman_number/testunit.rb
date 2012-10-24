@@ -69,4 +69,16 @@ class Tester < Test::Unit::TestCase
 		assert_equal(99, result)
 	end
 
+	def test_MMDCCLIreturn2751
+		rn = Roman_number.new()
+		result = rn.parse('MMDCCLI')
+		assert_equal(2751, result)
+	end
+
+	def test_MCMXCreturn1999
+		rn = Roman_number.new()
+		result = rn.parse('MCMXC')
+		assert_equal(1999, result)
+	end
+
 end
