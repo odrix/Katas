@@ -22,6 +22,9 @@ class Roman_number
 		if(letter == 'X')
 			return 10
 		end
+		if(letter == 'L')
+			return 50
+		end
 		return 0
 	end
 end
