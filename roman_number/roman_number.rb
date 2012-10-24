@@ -3,7 +3,7 @@ class Roman_number
 	def parse(letters)
 		result = 0
 		letters.split(//).each_with_index do |num_char, index|
-			if(letters.length > index+1 && (letters[index+1,1] == "V" || letters[index+1,1] == "X"))
+			if(letters.length > index+1 && (letters[index+1,1] == "V" || letters[index+1,1] == "X" || letters[index+1,1] == "L"))
 				result -= parseOneLetter(num_char)
 			else
 				result += parseOneLetter(num_char)
