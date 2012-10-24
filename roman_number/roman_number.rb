@@ -1,9 +1,16 @@
 class Roman_number
-	
+
+	@letters_values =  {}
+
+	def initialize()
+		@letters_values =  {'I' => 1, 'V' => 5, 'X' => 10, 'L' => 50}
+		@letters_values.default = 0
+	end
+
 	def parse(letters)
 		result = 0
 		letters.split(//).each_with_index do |num_char, index|
-			if(letters.length > index+1 && (letters[index+1,1] == "V" || letters[index+1,1] == "X" || letters[index+1,1] == "L"))
+			if(letters.length > index+1 && letters[index+1,1] != "I") 
 				result -= parseOneLetter(num_char)
 			else
 				result += parseOneLetter(num_char)
@@ -12,20 +19,13 @@ class Roman_number
 		return result
 	end
 
+	private
+
 	def parseOneLetter(letter)
-		if(letter == 'I')
-			return 1
-		end
-		if(letter == 'V')
-			return 5
-		end
-		if(letter == 'X')
-			return 10
-		end
-		if(letter == 'L')
-			return 50
-		end
-		return 0
+		#if(@letters_values.has_key?(letter))
+			return @letters_values[letter]
+		#end
+		#return 0
 	end
 end
 
