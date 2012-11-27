@@ -5,7 +5,7 @@ function DireNombre (_nombre) {
 	if(_nombre % 3 == 0 || _nombre.toString().indexOf("3") >=0 )
 		result += "Fizz";
 		
-	if(_nombre % 5 == 0)
+	if(_nombre % 5 == 0 || _nombre.toString().indexOf("5") >=0)
 		result += "Buzz";
 		
 	if(result == "")

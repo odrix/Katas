@@ -56,8 +56,16 @@ describe("Fizz Buzz Extension - Fizz pour ceux contenant 3 et Buzz pour ceux con
     expect(DireNombre(13)).toEqual("Fizz");
   });
   
+  it("pour 52 dire Buzz", function() {
+    expect(DireNombre(52)).toEqual("Buzz");
+  });
+  
   it("pour 51 dire Buzz", function() {
-    expect(DireNombre(51)).toEqual("Buzz");
+    expect(DireNombre(51)).toEqual("FizzBuzz");
+  });
+  
+  it("pour 53 dire Buzz", function() {
+    expect(DireNombre(53)).toEqual("FizzBuzz");
   });
    
 });
