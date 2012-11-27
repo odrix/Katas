@@ -1,4 +1,4 @@
-describe("Fizz Buzz - les Specs", function() {
+describe("Fizz Buzz - Fizz pour les multiples de 3 et Buzz pour les multiple de 5", function() {
 
   it("pour 1 dire  1", function() {
     expect(DireNombre(1)).toEqual("1");
@@ -42,6 +42,10 @@ describe("Fizz Buzz - les Specs", function() {
   
   it("pour 15 dire FizzBuzz", function() {
     expect(DireNombre(15)).toEqual("FizzBuzz");
+  });
+  
+  it("pour 30 dire FizzBuzz", function() {
+    expect(DireNombre(30)).toEqual("FizzBuzz");
   });
   
 });

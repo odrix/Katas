@@ -1,11 +1,15 @@
 
 
 function DireNombre (_nombre) {
+	var result = ""; 
 	if(_nombre % 3 == 0)
-		return "Fizz";
+		result += "Fizz";
 		
 	if(_nombre % 5 == 0)
-		return "Buzz";
+		result += "Buzz";
+		
+	if(result == "")
+		result = _nombre.toString()
 
-	return _nombre.toString();
+	return result;
 }
