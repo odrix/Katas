@@ -1,5 +1,5 @@
 
 
 function DireNombre (_nombre) {
-	return "0";
+	return _nombre.toString();
 }
