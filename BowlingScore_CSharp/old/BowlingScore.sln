@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BowlingScore", "BowlingScore\BowlingScore.csproj", "{6CFE0731-A90E-4FA0-A9FF-79792047C77B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BowlingScoreTest", "BowlingScoreTest\BowlingScoreTest.csproj", "{3D258046-5BB8-49EC-A701-E5930F08985E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6CFE0731-A90E-4FA0-A9FF-79792047C77B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CFE0731-A90E-4FA0-A9FF-79792047C77B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6CFE0731-A90E-4FA0-A9FF-79792047C77B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6CFE0731-A90E-4FA0-A9FF-79792047C77B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D258046-5BB8-49EC-A701-E5930F08985E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D258046-5BB8-49EC-A701-E5930F08985E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D258046-5BB8-49EC-A701-E5930F08985E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D258046-5BB8-49EC-A701-E5930F08985E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
