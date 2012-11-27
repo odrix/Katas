@@ -49,3 +49,11 @@ describe("Fizz Buzz - Fizz pour les multiples de 3 et Buzz pour les multiple de 
   });
   
 });
+
+describe("Fizz Buzz Extension - Fizz pour ceux contenant 3 et Buzz pour ceux contenant 5", function() {
+
+  it("pour 13 dire Fizz", function() {
+    expect(DireNombre(13)).toEqual("Fizz");
+  });
+   
+});
