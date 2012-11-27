@@ -2,7 +2,7 @@
 
 function DireNombre (_nombre) {
 	var result = ""; 
-	if(_nombre % 3 == 0)
+	if(_nombre % 3 == 0 || _nombre.toString().indexOf("3") >=0 )
 		result += "Fizz";
 		
 	if(_nombre % 5 == 0)
